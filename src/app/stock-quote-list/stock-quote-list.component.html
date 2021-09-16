@@ -1,0 +1,12 @@
+<ul>
+  <li *ngFor="let symbol of symbols">
+    <app-stock-quote [symbol]="symbol"></app-stock-quote>
+  </li>
+</ul>
+<pre>{{data | json }}</pre>
+<button (click)="getData()">Request</button>
+<ul>
+  <li *ngFor="let quote of getKeys(quotes)">
+    {{quote}} {{quotes.get(quote).lastPrice}} {{quotes.get(quote).netChange}}
+  </li>
+</ul>
